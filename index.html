@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="estilos.css">
+    <title>mi primera web 2025</title>
+  
+
+</head>
+
+<body> 
+
+       <nav class="menu-principal">
+        <ul>
+          
+            <li><a href="primermenu.html">Conecta con Nosotros</a></li>
+            <li><a href="segundomenu.html">Explorando los Géneros Musicales</a></li>
+
+        </ul>
+    </nav>
+    
+    <div class="encabezado">
+        <h1 id="tituloPrincipal">¿COMO HACER PAGINAS CON HTML?</h1>
+    </div>
+
+
+   <div class="descripcion"> <H2>EN ESTA PAGINA, APRENDEREMOS COMO REALIZAR PAGINAS WEB CON HTML - APRENDIZ STEFANI ALVAREZ</H2></div>
+        <hr><br>
+        
+    <span style="color:red"> HTML </span> significa Lenguaje de Marcas 
+        de  Hipertexto. No es un lenguaje de programación per se, sino un 
+        lenguaje de marcado que se utiliza para crear la estructura de las páginas web.  
+        Define el significado y la estructura  del contenido web. <br><br>
+
+    <ol>
+
+            <h3> <li> ESTRUCTURA BÁSICA DE UN DOCUMENTO HTML</h3> </li>
+        
+        Todo documento HTML comienza con una declaración de tipo de documento, seguido 
+        por elementos que definen la cabeza (head) y el cuerpo (body) de la página. <br>
+
+          
+            <h3> <li> TITULOS Y VIÑETAS</h3> </li>
+        
+        Cuando pones un texto  en una etiqueta (h1), el texto estará en negrilla, y 
+        la dimensión de la letra será igual al número del encabezado. Los títulos pueden 
+        tener dimensiones entre 1 y 6.
+        Las viñetas en HTML ofrece dos tipos principales de listas: <br><br>
+
+                <ul>
+                    <li>Listas desordenadas (con viñetas)</li>
+                    <li>se utiliza con UL</li>
+                </ul>
+                
+                <ol>
+                    <li> Listas ordenadas (numeradas) </li>
+                    <li>se utiliza con OL</li>
+                </ol>
+            
+             <h3> <li> ATRIBUTOS</h3> </li>
+            
+        Los elementos HTML pueden tener atributos que proporcionan información 
+        adicional sobre el elemento. Por ejemplo, el elemento <b> (img) tiene 
+        atributos como src (que indica la fuente de la imagen) y alt 
+        (que proporciona texto alternativo): </b> <br>
+            
+                 <img id="imagenPrincipal"src="graduacion.jpg" alt="Descripción de la imagen" width="300" height="200"/>
+         
+            <h3> <li> BORDES </h3> </li>
+          
+        Para poder indicar un borde determinado con un color y un grosor concreto para un div,
+        dentro del código CSS, utilizamos la propiedad <b>border</b>, que utiliza el siguiente formato: <br>
+
+              <div class="borde"> border: 2px solid grey; </div>   <br>
+          
+            <h3> <li> ELEMENTOS Y ETIQUETAS</h3> </li>
+        
+        HTML utiliza "etiquetas" para marcar el inicio y el fin de los elementos. 
+        Estas etiquetas generalmente vienen en pares, por ejemplo: <br><br>
+        
+            <table style="width: 500px;" >
+                
+                <tr> 
+                    <th>ETIQUETA</th>
+                    <th>DESCRIPCIÓN</th>
+                </tr>
+
+                <tr>
+                    <td>head</td>
+                    <td>Texto no visible (metadatos, codigos, palabras claves)</td>
+                </tr>
+
+                <tr>
+                    <td>title</td>
+                    <td>Define el título de la página del navegador.</td>
+                </tr>
+
+                <tr>
+                    <td>body</td>
+                    <td>Encierra todo el contenido visible de la página </td>
+                </tr>
+
+                <tr>
+                    <td>ul, ol, li</td>
+                    <td> UL (viñetas), OL (números), y LI para los ítems.</td>
+                </tr>
+
+                <tr>
+                    <td>div y span</td>
+                    <td>Contenedor para agrupar contenido de bloque
+                        y de linea, utilizado CSS.</td>
+                </tr>
+                
+            </table>
+        
+            <h3> <li> FORMULARIOS </h3> </li>
+                  
+        Los formularios en HTML son elementos esenciales para recopilar información de los 
+        usuarios en una página web. Permiten enviar datos a un servidor para su procesamiento. <hr>
+              
+                <form>
+
+                    <label>nombre</label>
+                    <input>
+
+                    <label for="contraseña">contraseña</label>
+                    <input type="password"/> <br><br>
+                    
+                    <label for="autoriza dejar informacion">autoriza dejar informacion</label>
+                    <input type="radio" /> <br><br>
+
+                    <label for="comentario">comentario</label> <br>
+                    <textarea cols="50" rows="5" id="comentario" placeholder="ingrese comentario" ></textarea> <br>
+
+                    <input type="submit" />
+
+                </form>
+
+            <h3> <li> ENLACES </h3> </li>
+                  
+                Los enlaces (o hipervínculos) en HTML son elementos fundamentales que permiten 
+                navegar entre páginas web y recursos. Se crean con la etiqueta (a), con href 
+                se coloca el link, y con target="_blank" se abre el link en otra página. <hr>
+           
+             <a target="_blank" href="https://colcamilodaza.edu.co/web/">ir a la pagina del Colegio Camilo Daza</a>
+           <br>
+             <a target="_blank" href="https://www.gooogle.com.co">ir a google</a>
+    </ol>
+
+
+    <div id="game-container">
+        <div id="player"></div>
+        <div id="enemy"></div>
+    </div>
+
+    <script src="script.js">  </script>
+
+</body>
+
+</html>
