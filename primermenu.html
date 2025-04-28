@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes Sociales Profesionales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --dark-color: #1f2937;
+            --light-color: #f9fafb;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .social-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #4361ee, #3a0ca3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .social-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(58, 12, 163, 0.1) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-card:hover::before {
+            opacity: 1;
+        }
+
+        .social-icon {
+            padding: 2rem;
+            text-align: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+        }
+
+        .social-icon i {
+            position: relative;
+            z-index: 2;
+        }
+
+        .social-icon::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .social-content {
+            padding: 1.5rem;
+        }
+
+        .social-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .social-content p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .social-btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Colores específicos para cada red social */
+        .facebook .social-icon {
+            background: linear-gradient(135deg, #1877f2, #0d5fd8);
+        }
+
+        .twitter .social-icon {
+            background: linear-gradient(135deg, #1da1f2, #0d8ecf);
+        }
+
+        .instagram .social-icon {
+            background: linear-gradient(135deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        }
+
+        .linkedin .social-icon {
+            background: linear-gradient(135deg, #0077b5, #006097);
+        }
+
+        .youtube .social-icon {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+        }
+
+        .tiktok .social-icon {
+            background: linear-gradient(135deg, #25f4ee, #000000);
+        }
+
+        /* Efecto de onda al hacer hover */
+        @keyframes wave {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .social-card:hover .social-icon::after {
+            animation: wave 1s ease-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        nav {
+            background: #333;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #9d50bb;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="social-section">
+        <div class="section-header">
+
+
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Páginas con HTML - Stefani</a></li> 
+                    <li><a href="segundomenu.html">Explorando los Géneros Musicales</a></li>
+                </ul>
+            </nav>
+           
+
+            <h2>Conecta con Nosotros</h2>
+            <p>Síguenos en nuestras redes sociales para mantenerte actualizado con nuestro contenido más reciente, noticias y promociones exclusivas.</p>
+        </div>
+
+        <div class="social-grid">
+            <!-- Tarjeta Facebook -->
+            <div class="social-card facebook">
+                <div class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="social-content">
+                    <h3>Facebook</h3>
+                    <p>Únete a nuestra comunidad en Facebook para contenido exclusivo y actualizaciones en tiempo real.</p>
+                    <a href="https://facebook.com" target="_blank" class="social-btn">Seguir</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta Instagram -->
+            <div class="social-card instagram">
+                <div class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="social-content">
+                    <h3>Instagram</h3>
+                    <p>Descubre nuestro contenido visual y mantente al día con nuestras últimas publicaciones.</p>
+                    <a href="https://instagram.com" target="_blank" class="social-btn">Seguir</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta Twitter -->
+            <div class="social-card twitter">
+                <div class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <div class="social-content">
+                    <h3>Twitter</h3>
+                    <p>Sigue nuestras conversaciones y participa en nuestros debates más interesantes.</p>
+                    <a href="https://twitter.com" target="_blank" class="social-btn">Seguir</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta LinkedIn -->
+            <div class="social-card linkedin">
+                <div class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+                <div class="social-content">
+                    <h3>LinkedIn</h3>
+                    <p>Conecta con nosotros profesionalmente y descubre oportunidades de colaboración.</p>
+                    <a href="https://linkedin.com" target="_blank" class="social-btn">Seguir</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta YouTube -->
+            <div class="social-card youtube">
+                <div class="social-icon">
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <div class="social-content">
+                    <h3>YouTube</h3>
+                    <p>Suscríbete a nuestro canal para tutoriales, demostraciones y contenido exclusivo.</p>
+                    <a href="https://youtube.com" target="_blank" class="social-btn">Suscribirse</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta TikTok -->
+            <div class="social-card tiktok">
+                <div class="social-icon">
+                    <i class="fab fa-tiktok"></i>
+                </div>
+                <div class="social-content">
+                    <h3>TikTok</h3>
+                    <p>Disfruta de nuestro contenido creativo y divertido en formato de videos cortos.</p>
+                    <a href="https://tiktok.com" target="_blank" class="social-btn">Seguir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Efecto de carga animada
+            const socialCards = document.querySelectorAll('.social-card');
+            
+            socialCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 150 * index);
+            });
+
+            // Analytics para seguimiento de clics
+            const socialButtons = document.querySelectorAll('.social-btn');
+            
+            socialButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const platform = this.closest('.social-card').classList[1];
+                    console.log(`Red social clickeada: ${platform}`);
+                    // Aquí podrías integrar Google Analytics o otro sistema de tracking
+                    // Ejemplo: gtag('event', 'social_click', { 'platform': platform });
+                });
+            });
+
+            // Efecto de hover mejorado para dispositivos táctiles
+            if ('ontouchstart' in window) {
+                socialCards.forEach(card => {
+                    card.addEventListener('touchstart', function() {
+                        this.classList.add('hover-effect');
+                    });
+                    
+                    card.addEventListener('touchend', function() {
+                        setTimeout(() => {
+                            this.classList.remove('hover-effect');
+                        }, 500);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

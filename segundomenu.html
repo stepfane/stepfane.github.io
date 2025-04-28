@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorando los Géneros Musicales</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .genre-card {
+            background: white;
+            margin: 1.5rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .genre-card h2 {
+            color: #6e48aa;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+        .genre-img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        nav {
+            background: #333;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #9d50bb;
+        }
+        .audio-container {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .audio-title {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .audio-title i {
+            margin-right: 10px;
+            color: #6e48aa;
+        }
+        audio {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 0.3rem 0;
+            }
+        }
+
+
+
+        .genre-img-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            height: 300px; /* Altura fija para el contenedor */
+        }
+        
+        .genre-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            transform-origin: center center;
+            cursor: pointer;
+        }
+        
+        .genre-img:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Efecto adicional para dispositivos táctiles */
+        @media (hover: none) {
+            .genre-img:hover {
+                transform: none;
+            }
+            .genre-img.zoomed {
+                transform: scale(1.1);
+            }
+        }
+
+
+
+
+
+
+
+
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-music"></i> Explorando los Géneros Musicales</h1>
+            <p>Descubre la diversidad de la música alrededor del mundo</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Páginas con HTML - Stefani</a></li> 
+            <li><a href="primermenu.html">Conecta con Nosotros</a></li>
+            <li><a href="#pop"><i class="fas fa-headphones"></i> Pop</a></li>
+            <li><a href="#rock"><i class="fas fa-guitar"></i> Rock</a></li>
+            <li><a href="#electronica"><i class="fas fa-synth"></i> Electrónica</a></li>
+            <li><a href="#jazz"><i class="fas fa-saxophone"></i> Jazz</a></li>
+            <li><a href="#clasica"><i class="fas fa-violin"></i> Clásica</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="container">
+        <!-- POP -->
+        <section id="pop" class="genre-card">
+            <h2><i class="fas fa-star"></i> Música Pop</h2>
+            <img src="pop.jpg" alt="Concierto de pop" class="genre-img">
+            <p>El pop es un género musical que se caracteriza por su estructura sencilla, melodías pegadizas y enfoque comercial. Surgió en los años 50 como derivación del rock and roll.</p>
+            
+            <div class="audio-container">
+                <div class="audio-title">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Cancione mas papulares del pop</span>
+                </div>
+                <p>Considerada una de las canciones más icónicas del pop, mezcla elementos gospel con sonidos pop modernos.</p>
+                <audio controls>
+                    <source src="Pop.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+            
+            <h3>Artistas representativos:</h3>
+            <ul>
+                <li>Michael Jackson - "Thriller" (1982)</li>
+                <li>Madonna - "Like a Virgin" (1984)</li>
+                <li>Britney Spears - "...Baby One More Time" (1998)</li>
+            </ul>
+        </section>
+
+        <!-- ROCK -->
+        <section id="rock" class="genre-card">
+            <h2><i class="fas fa-guitar"></i> Rock</h2>
+            <img src="rock.png" alt="Concierto de rock" class="genre-img">
+            <p>El rock es un género musical que surgió en los Estados Unidos en los años 50, caracterizado por el uso de guitarras eléctricas, batería y bajo, junto con voces potentes.</p>
+            
+            <div class="audio-container">
+                <div class="audio-title">
+                    <i class="fas fa-play-circle"></i>
+                  
+                </div>
+                <p>Obra maestra del rock que combina elementos de ópera, balada y hard rock en una sola canción.</p>
+                <audio controls>
+                    <source src="rock.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+            
+            <h3>Subgéneros destacados:</h3>
+            <ul>
+                <li><strong>Rock clásico:</strong> Led Zeppelin - "Stairway to Heaven"</li>
+                <li><strong>Hard rock:</strong> AC/DC - "Back in Black"</li>
+                <li><strong>Rock alternativo:</strong> Nirvana - "Smells Like Teen Spirit"</li>
+            </ul>
+        </section>
+
+        <!-- ELECTRÓNICA -->
+        <section id="electronica" class="genre-card">
+            <h2><i class="fas fa-synth"></i> Música Electrónica</h2>
+            <img src="electronica.jpg" alt="Festival de música electrónica" class="genre-img">
+            <p>La música electrónica se crea utilizando instrumentos electrónicos y tecnología de producción musical. Incluye una amplia variedad de estilos desde ambient hasta dance.</p>
+            
+            <div class="audio-container">
+                <div class="audio-title">
+                    <i class="fas fa-play-circle"></i>
+                    <span>"Strobe" - Deadmau5 (2009)</span>
+                </div>
+                <p>Considerada por muchos como la mejor canción de música electrónica de todos los tiempos.</p>
+                <audio controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+            
+            <h3>Estilos principales:</h3>
+            <ul>
+                <li><strong>House:</strong> Daft Punk - "Around the World"</li>
+                <li><strong>Techno:</strong> Jeff Mills - "The Bells"</li>
+                <li><strong>Trance:</strong> Paul van Dyk - "For an Angel"</li>
+            </ul>
+        </section>
+
+        <!-- JAZZ -->
+        <section id="jazz" class="genre-card">
+            <h2><i class="fas fa-saxophone"></i> Jazz</h2>
+            <img src="jazz.jpg" alt="Bandas de jazz" class="genre-img">
+            <p>El jazz es un género musical que surgió a finales del siglo XIX en Estados Unidos, caracterizado por la improvisación, ritmos sincopados y armonías complejas.</p>
+            
+            <div class="audio-container">
+                <div class="audio-title">
+                    <i class="fas fa-play-circle"></i>
+                    <span>"Take Five" - Dave Brubeck Quartet (1959)</span>
+                </div>
+                <p>Famosa por su inusual compás de 5/4, es una de las piezas de jazz más reconocibles.</p>
+                <audio controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+            
+            <h3>Variantes importantes:</h3>
+            <ul>
+                <li><strong>Dixieland:</strong> Louis Armstrong - "When the Saints Go Marching In"</li>
+                <li><strong>Bebop:</strong> Charlie Parker - "Ko-Ko"</li>
+                <li><strong>Cool jazz:</strong> Miles Davis - "So What"</li>
+            </ul>
+        </section>
+
+        <!-- CLÁSICA -->
+        <section id="clasica" class="genre-card">
+            <h2><i class="fas fa-violin"></i> Música Clásica</h2>
+            <img src="clasica.jpg" alt="Orquesta sinfónica" class="genre-img">
+            <p>La música clásica abarca el período aproximadamente desde 1750 hasta 1820, pero se usa comúnmente para referirse a toda la música culta occidental desde la Edad Media hasta el presente.</p>
+            
+            <div class="audio-container">
+                <div class="audio-title">
+                    <i class="fas fa-play-circle"></i>
+                    <span>"Sinfonía No. 5" - Beethoven (1808)</span>
+                </div>
+                <p>Los primeros cuatro compases son posiblemente los más famosos de toda la música clásica.</p>
+                <audio controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+            
+            <h3>Compositores esenciales:</h3>
+            <ul>
+                <li>Wolfgang Amadeus Mozart - "Requiem"</li>
+                <li>Johann Sebastian Bach - "Tocata y fuga en Re menor"</li>
+                <li>Pyotr Ilyich Tchaikovsky - "El lago de los cisnes"</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Explorando los Géneros Musicales | Todos los derechos reservados</p>
+        <p><i class="fas fa-envelope"></i> contacto@musicagenres.com | <i class="fas fa-phone"></i> +1 234 567 890</p>
+    </footer>
+</body>
+</html>
